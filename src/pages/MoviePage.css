@@ -1,0 +1,11 @@
+.movie-layout {
+  display: flex;
+}
+.movie-content {
+  margin-left: 200px;
+  padding: 2rem;
+  flex: 1;
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+}

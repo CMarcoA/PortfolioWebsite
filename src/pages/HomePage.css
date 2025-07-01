@@ -1,0 +1,27 @@
+/* src/pages/HomePage.css */
+.home-hero-container {
+  position: relative;
+  width: 100%; /* full width of its parent */
+  height: 100vh; /* exactly viewport height */
+  transition: transform 0.3s ease;
+  /* remove any overflow-x here! */
+}
+
+.home-hero-container.shifted {
+  transform: translateX(250px); /* match your sidebar width */
+}
+
+/* HomePageSection2 - smooth scroll*/
+.scroll-container {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth; /* <<< add this */
+  overflow-y: auto;
+  height: 100vh;
+}
+
+/* for each snap child */
+.scroll-container > section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always; /* <<< ensure it never skips */
+  height: 100vh;
+}

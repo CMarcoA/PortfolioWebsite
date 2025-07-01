@@ -1,13 +1,66 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* side bar stuff */
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* just in case */
+}
+
+:root {
+  --sidebar-width: 250px;
+}
+
+.app {
+  transition: transform 0.3s ease;
+}
+
+.app.shifted {
+  transform: translateX(var(--sidebar-width));
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+/* HomePageSection2 - snapping styles*/
+/* make the page scroll vertically, one “page” at a time */
+/* HomePageSection2 - smooth scroll*/
+.scroll-container {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth; /* <<< add this */
+  overflow-y: auto;
+  height: 100vh;
+}
+
+/* each child section must full-screen and snap at its start */
+/* for each snap child */
+.scroll-container > section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always; /* <<< ensure it never skips */
+  height: 100vh;
 }
