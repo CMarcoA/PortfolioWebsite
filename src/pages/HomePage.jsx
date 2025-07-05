@@ -1,32 +1,52 @@
 // src/pages/HomePage.jsx
 import React, { useState } from "react";
+
+// 1) Swiper core + React components
+import { Swiper, SwiperSlide } from "swiper/react";
+// 2) Import the Mousewheel module from Swiper’s modules folder
+import { Mousewheel } from "swiper/modules";
+// 3) Swiper styles
+import "swiper/css";
+import "swiper/css/mousewheel";
+
+// 4) Your own components
 import NavBar from "../components/NavBar/NavBar";
 import Sidebar from "../components/Sidebar/Sidebar";
 import HeroCarousel from "../components/HeroCarousel/HeroCarousel";
 import HeroListOverlay from "../components/HeroListOverlay/HeroListOverlay";
-import "./HomePage.css";
 import HomePageSection2 from "../components/HomePageSection2/HomePageSection2";
 
+import "./HomePage.css";
+
 export default function HomePage() {
-  // this line creates the piece of state called `menuOpen`
-  // and its updater `setMenuOpen`
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <>
-      {/* Never inside the shifting container */}
+      {/* fixed top navbar + drawer */}
       <NavBar onMenuClick={() => setMenuOpen((o) => !o)} />
       <Sidebar isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
 
-      {/* This is the *only* div that moves */}
-      <div className="scroll-container">
-        <section className="home-hero-container">
-          <HeroCarousel />
-          <HeroListOverlay />
-        </section>
+      {/* full-page swiper in vertical mode */}
+      <Swiper
+        direction="vertical"
+        slidesPerView={1}
+        mousewheel={{ releaseOnEdges: true }}
+        modules={[Mousewheel]}
+        speed={600}
+        className="my-swiper"
+      >
+        <SwiperSlide>
+          <div className="home-hero-container">
+            <HeroCarousel />
+            <HeroListOverlay />
+          </div>
+        </SwiperSlide>
 
-        <HomePageSection2 />
-      </div>
+        <SwiperSlide>
+          <HomePageSection2 />
+        </SwiperSlide>
+      </Swiper>
     </>
   );
 }
