@@ -1,4 +1,15 @@
 /* src/pages/HomePage.css */
+
+/* ① Always-on transition for smooth animation */
+.content-wrapper {
+  transition: transform 0.3s ease;
+}
+
+/* ② When “shifted”, move right by your sidebar width */
+.content-wrapper.shifted {
+  transform: translateX(250px);
+}
+
 .my-swiper,
 .my-swiper .swiper-slide {
   height: 100vh;

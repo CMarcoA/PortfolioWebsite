@@ -28,25 +28,27 @@ export default function HomePage() {
       <Sidebar isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
 
       {/* full-page swiper in vertical mode */}
-      <Swiper
-        direction="vertical"
-        slidesPerView={1}
-        mousewheel={{ releaseOnEdges: true }}
-        modules={[Mousewheel]}
-        speed={600}
-        className="my-swiper"
-      >
-        <SwiperSlide>
-          <div className="home-hero-container">
-            <HeroCarousel />
-            <HeroListOverlay />
-          </div>
-        </SwiperSlide>
+      <div className={menuOpen ? "content-wrapper shifted" : "content-wrapper"}>
+        <Swiper
+          direction="vertical"
+          slidesPerView={1}
+          mousewheel={{ releaseOnEdges: true }}
+          modules={[Mousewheel]}
+          speed={600}
+          className="my-swiper"
+        >
+          <SwiperSlide>
+            <div className="home-hero-container">
+              <HeroCarousel />
+              <HeroListOverlay />
+            </div>
+          </SwiperSlide>
 
-        <SwiperSlide>
-          <HomePageSection2 />
-        </SwiperSlide>
-      </Swiper>
+          <SwiperSlide>
+            <HomePageSection2 />
+          </SwiperSlide>
+        </Swiper>
+      </div>
     </>
   );
 }
