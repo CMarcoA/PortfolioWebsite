@@ -1,6 +1,6 @@
 /* src/components/HomePageSection2/HomePageSection2.css */
 .home-page-section-2 {
-  height: 100vh; /* full viewport */
+  min-height: 100vh; /* allow growth beyond one viewport */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,4 +10,9 @@
   scroll-snap-align: start; /* snap point */
   padding: 2rem;
   box-sizing: border-box;
+}
+
+.home-gallery {
+  width: 100%;
+  padding-top: 2rem;
 }

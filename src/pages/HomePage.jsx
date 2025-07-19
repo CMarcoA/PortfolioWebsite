@@ -15,6 +15,7 @@ import Sidebar from "../components/Sidebar/Sidebar";
 import HeroCarousel from "../components/HeroCarousel/HeroCarousel";
 import HeroListOverlay from "../components/HeroListOverlay/HeroListOverlay";
 import HomePageSection2 from "../components/HomePageSection2/HomePageSection2";
+import HomePageSection3 from "../components/HomePageSection3/HomePageSection3";
 
 import "./HomePage.css";
 
@@ -46,6 +47,10 @@ export default function HomePage() {
 
           <SwiperSlide>
             <HomePageSection2 />
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <HomePageSection3 />
           </SwiperSlide>
         </Swiper>
       </div>

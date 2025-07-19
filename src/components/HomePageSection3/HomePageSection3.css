@@ -1,0 +1,16 @@
+/* src/components/HomePageSection3/HomePageSection3.css */
+.home-page-section-3 {
+  scroll-snap-align: start;
+  background: #111;
+  padding: 4rem 2rem;
+}
+
+/* target the .gallery grid inside GalleryPage */
+.home-page-section-3 .gallery {
+  display: grid;
+  /* 3 columns on large screens, auto-fit down to 1 */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
