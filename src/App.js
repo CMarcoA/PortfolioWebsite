@@ -15,6 +15,7 @@ export default function App() {
 
         {/* /gallery → grid */}
         <Route path="/gallery" element={<GalleryPage />} />
+        <Route path="/gallery/:slug" element={<GalleryDetail />} />
 
         {/* /gallery/1,2,… → detail */}
         <Route path="/gallery/:id" element={<GalleryDetail />} />

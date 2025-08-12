@@ -1,0 +1,62 @@
+/* src/components/Gallery/polaroid.css */
+
+.polaroid-card {
+  background: #f5f7f5;
+  border: 2px solid #cfd6cf;
+  box-shadow: 0 2px 0 #b8beb8, 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  will-change: transform;
+}
+
+.polaroid-card:hover {
+  transform: translateY(-2px) rotate(-0.25deg);
+  box-shadow: 0 4px 0 #b8beb8, 0 16px 32px rgba(0, 0, 0, 0.12);
+}
+
+.polaroid-link {
+  display: grid;
+  grid-template-rows: 180px 1fr; /* Image height then content */
+  text-decoration: none;
+  color: inherit;
+  min-height: 320px;
+}
+
+.polaroid-image {
+  background: #e7ece7;
+  display: grid;
+  place-items: center;
+  border-bottom: 1px solid #d9e0d9;
+}
+
+.polaroid-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.polaroid-meta {
+  padding: 14px 16px 16px;
+}
+
+.polaroid-date {
+  display: inline-block;
+  font-size: 0.825rem;
+  color: #708070;
+  letter-spacing: 0.02em;
+}
+
+.polaroid-title {
+  margin: 4px 0 6px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #243024;
+}
+
+.polaroid-blurb {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.35rem;
+  color: #4c5a4c;
+}

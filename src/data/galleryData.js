@@ -1,15 +1,51 @@
-// src/data/galleryData.js
-import portf1 from "../components/PolaroidItem/portf1.jpeg";
-// import any other images the same way
-
-export const galleryData = [
+// src/data/gallery.js
+export const galleryItems = [
   {
-    id: "1",
-    src: portf1,
-    date: "2/28/25",
+    id: 1,
     title: "Eye Museum",
-    desc: "Eye Filmmuseum is a film archive, museum, and cinema in Amsterdam that presents and screens both Dutch and foreign films screened in the Netherlands.",
+    slug: "eye-museum",
+    date: "20/05",
+    blurb: "Rij Krommenie is a film archive, theater, and playful exhibition hall that looks across the IJ bay.",
+    img: "/images/gallery/image_placeholder_1.jpg",
   },
-  // { id: "2", src: ..., date: "...", title: "...", desc: "..." },
-  // …add more entries here
+  {
+    id: 2,
+    title: "Canal Reflections",
+    slug: "canal-reflections",
+    date: "21/05",
+    blurb: "Blue dusk on the Herengracht; glassy water doubles the gables and the winter lamps.",
+    img: "/images/gallery/image_placeholder_2.jpg",
+  },
+  {
+    id: 3,
+    title: "Old Harbor",
+    slug: "old-harbor",
+    date: "22/05",
+    blurb: "Rusted cleats, thick ropes, and gulls circling over a sleepy pier near the Spoor.",
+    img: "/images/gallery/image_placeholder_3.jpg",
+  },
+  {
+    id: 4,
+    title: "Stone Arcade",
+    slug: "stone-arcade",
+    date: "23/05",
+    blurb: "Light slashes through an arcade of arches; shadow patterns crawl across the floor.",
+    img: "/images/gallery/image_placeholder_4.jpg",
+  },
+  {
+    id: 5,
+    title: "Winter Tram",
+    slug: "winter-tram",
+    date: "24/05",
+    blurb: "A tram cuts through fresh snow; windows glow like little living rooms in motion.",
+    img: "/images/gallery/image_placeholder_5.jpg",
+  },
+  {
+    id: 6,
+    title: "Forest Path",
+    slug: "forest-path",
+    date: "25/05",
+    blurb: "Moss, birch, and a ribbon of dirt framed by ferns leading into quiet green.",
+    img: "/images/gallery/image_placeholder_6.jpg",
+  },
 ];

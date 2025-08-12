@@ -1,21 +1,20 @@
+// src/pages/GalleryPage.jsx
 import React from "react";
+import { galleryItems } from "../data/galleryData";
+import PolaroidCard from "../components/Gallery/PolaroidCard";
 import "./GalleryPage.css";
-import { galleryData } from "../data/galleryData";
-import PolaroidItem from "../components/PolaroidItem/PolaroidItem";
 
 export default function GalleryPage() {
+  // Java analogy: Think of mapping a List<GalleryItem> into UI components.
   return (
-    <div className="gallery-container">
-      <div className="spacer" style={{ height: "100px" }} />
-      <div className="gallery-title">
-        <h1 className="title-main">Visual Archive</h1>
-        <p className="title-sub">A Collection of Cinematic Memories</p>
-      </div>
-      <div className="gallery">
-        {galleryData.map((item) => (
-          <PolaroidItem key={item.id} {...item} />
+    <main className="gallery-wrap">
+      <h2 className="gallery-heading">Gallery</h2>
+
+      <section className="gallery-grid" aria-label="Polaroid gallery">
+        {galleryItems.map((item) => (
+          <PolaroidCard key={item.id} item={item} />
         ))}
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
