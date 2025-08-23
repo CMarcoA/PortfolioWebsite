@@ -2,19 +2,28 @@
 import React from "react";
 import { galleryItems } from "../data/galleryData";
 import PolaroidCard from "../components/Gallery/PolaroidCard";
+import StackPreview from "../components/Gallery/StackPreview"; // ⬅ add this
 import "./GalleryPage.css";
 
 export default function GalleryPage() {
-  // Java analogy: Think of mapping a List<GalleryItem> into UI components.
   return (
     <main className="gallery-wrap">
-      <h2 className="gallery-heading">Gallery</h2>
+      <h2 className="gallery-heading">Gallery (test)</h2>
 
-      <section className="gallery-grid" aria-label="Polaroid gallery">
+      {/* Original grid stays here */}
+      <section className="gallery-grid">
         {galleryItems.map((item) => (
           <PolaroidCard key={item.id} item={item} />
         ))}
       </section>
+
+      {/* ⬇ Temporary test section for the new component */}
+      <h2 className="gallery-heading">Preview Stack</h2>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "20px" }}>
+        {galleryItems.slice(0, 4).map((item) => (
+          <StackPreview key={item.id} title={item.title} cover={item.img} to={`/gallery/${item.slug}`} />
+        ))}
+      </div>
     </main>
   );
 }
