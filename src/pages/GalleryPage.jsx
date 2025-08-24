@@ -16,21 +16,6 @@ export default function GalleryPage() {
           <PolaroidCard key={item.id} item={item} />
         ))}
       </section>
-
-      {/* ⬇ Temporary test section for the new component */}
-      <h2 className="gallery-heading">Preview Stack</h2>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "20px" }}>
-        {galleryItems.slice(0, 4).map((item) => (
-          <StackPreview
-            title={item.title}
-            cover={item.img}
-            to={`/gallery/${item.slug}`}
-            featured               // makes the main card feel a bit bolder
-            height={320}           // taller image
-            backCount={3}          // 2–4 looks good for “scattered”
-          />
-        ))}
-      </div>
     </main>
   );
 }

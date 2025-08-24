@@ -17,6 +17,8 @@ import HeroListOverlay from "../components/HeroListOverlay/HeroListOverlay";
 import HomePageSection2 from "../components/HomePageSection2/HomePageSection2";
 import HomePageSection3 from "../components/HomePageSection3/HomePageSection3";
 
+import GalleryShowcase from "./GalleryShowcase";
+
 import "./HomePage.css";
 
 export default function HomePage() {

@@ -3,22 +3,17 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import HomePage from "./pages/HomePage";
-import GalleryPage from "./pages/GalleryPage";
+import GalleryShowcase from "./pages/GalleryShowcase";
 import GalleryDetail from "./pages/GalleryDetail";
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* root URL */}
         <Route path="/" element={<HomePage />} />
-
-        {/* /gallery → grid */}
-        <Route path="/gallery" element={<GalleryPage />} />
+        <Route path="/gallery" element={<GalleryShowcase />} />
         <Route path="/gallery/:slug" element={<GalleryDetail />} />
-
-        {/* /gallery/1,2,… → detail */}
-        <Route path="/gallery/:id" element={<GalleryDetail />} />
+        <Route path="*" element={<div style={{padding: 24}}>Not found</div>} />
       </Routes>
     </BrowserRouter>
   );

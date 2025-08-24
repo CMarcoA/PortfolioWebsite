@@ -3,11 +3,13 @@ import React from "react";
 import GalleryPage from "../../pages/GalleryPage";
 import "./HomePageSection3.css";
 
+import GalleryShowcase from "../../pages/GalleryShowcase";
+
 export default function HomePageSection3() {
   return (
     <section className="home-page-section-3">
       {/* this will render exactly what GalleryPage does */}
-      <GalleryPage />
+      <GalleryShowcase />
     </section>
   );
 }
