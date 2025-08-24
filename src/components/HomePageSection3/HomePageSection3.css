@@ -1,17 +1,52 @@
 /* src/components/HomePageSection3/HomePageSection3.css */
+
 .home-page-section-3 {
-  scroll-snap-align: start;
-  background: #111;
-  padding: 4rem 2rem;
+  /* slight outer breathing room; adjust if needed */
+  padding: 0 20px;
 }
 
-/* target the .gallery grid inside GalleryPage */
-.home-page-section-3 .gallery {
-  display: grid;
-  /* 3 columns on large screens, auto-fit down to 1 */
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
+/* Trim page-level padding inside the embedded showcase */
+.home-page-section-3 .showcase-wrap {
+  padding: 0;                      /* remove big top/bottom padding */
   margin: 0 auto;
+  max-width: 1400px;               /* a bit wider on home */
+  display: grid;
+  grid-template-columns: 0.9fr 2.2fr; /* make RIGHT side bigger */
+  gap: 28px;
+  align-items: center;             /* vertically center left panel vs right */
 }
 
+/* Center the definition block content vertically */
+.home-page-section-3 .showcase-left {
+  align-self: center;              /* ensure it sits centered in the grid row */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;         /* center its text vertically */
+  min-height: 320px;               /* ensures enough height to look centered */
+  margin: 0;                       /* kill any top/btm shifts */
+}
+
+/* Make the right grey canvas taller/longer */
+.home-page-section-3 .showcase-canvas {
+  min-height: 680px;               /* was ~460px; extend to feel substantial */
+  padding: 28px;                   /* a touch more inner space */
+}
+
+/* Keep the previews tidy and centered within each cell */
+.home-page-section-3 .showcase-grid {
+  justify-items: center;
+  align-items: start;
+  gap: 24px;
+}
+
+/* Responsive: stack layout on tablet */
+@media (max-width: 980px) {
+  .home-page-section-3 .showcase-wrap {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .home-page-section-3 .showcase-canvas {
+    min-height: 560px;
+    padding: 20px;
+  }
+}
