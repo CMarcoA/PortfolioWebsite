@@ -23,12 +23,11 @@ export default function GalleryShowcase() {
       <section className="showcase-left" aria-label="Photography definition">
         <h1 className="showcase-heading">Photography</h1>
         <p className="showcase-sub">
-          the art or practice of taking and processing photographs.
+          fəˈtäɡrəfē
         </p>
 
         <p className="showcase-note">
-          A curated selection—bold yet elegant—mixing{" "}
-          <strong>polaroid charm</strong> with modern motion.
+          the <strong>art or practice</strong> of taking and processing photographs.
         </p>
 
         <Link to="/gallery/all" className="showcase-cta">

@@ -1,21 +1,22 @@
 /* src/pages/GalleryShowcase.css */
 
+/* === Overall wrapper === */
 .showcase-wrap {
   display: grid;
-  grid-template-columns: 1fr 1.6fr;   /* left : right */
+  grid-template-columns: 1fr 1.6fr;   /* left (definition) : right (previews) */
   gap: 28px;
   max-width: 1280px;
   margin: 0 auto;
   padding: 48px 20px 72px;
 }
 
-/* Left: definition panel */
+/* === Left panel: definition === */
 .showcase-left {
   align-self: start;
-    background: #161716;        /* deep charcoal panel */
-  color: #f5f5f5;             /* main text on panel */
+  background: #161716;        /* deep charcoal panel */
   border-radius: 14px;
   padding: 28px 24px;
+  color: #f5f5f5;
   box-shadow: 0 10px 28px rgba(0,0,0,0.25);
 }
 
@@ -25,52 +26,65 @@
   line-height: 2.4rem;
   font-weight: 800;
   letter-spacing: 0.02em;
-  font-family: "Playfair Display", Georgia, serif; /* elegant serif */
+  font-family: "Playfair Display", Georgia, serif;
 }
 
 .showcase-sub {
   margin: 0 0 18px;
   font-size: 1rem;
-  color: #cfd3cf;
+  color: #cfd3cf;              /* lighter paragraph */
 }
 
 .showcase-note {
   margin: 0 0 18px;
   font-size: 0.96rem;
-  color: #b7bcb7;
+  color: #b7bcb7;              /* muted secondary */
 }
 
 .showcase-cta {
   display: inline-block;
   text-decoration: none;
   font-weight: 700;
-  color: #cce4cc;
+  color: #cce4cc;              /* soft green link */
 }
-.showcase-cta:hover { text-decoration: underline; }
+.showcase-cta:hover {
+  text-decoration: underline;
+}
 
-/* Right: grey canvas with previews */
-.showcase-right { position: relative; }
+/* === Right panel: grey canvas with previews === */
+.showcase-right {
+  position: relative;
+}
 
 .showcase-canvas {
-  background: #2a2d2a;
+  background: #2a2d2a;         /* dark grey canvas */
   border: 2px solid #3a3f3a;
   border-radius: 16px;
   padding: 24px;
   min-height: 460px;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03), 0 10px 28px rgba(0,0,0,0.2);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03),
+              0 10px 28px rgba(0,0,0,0.2);
 }
 
-/* 2x2 preview grid inside the canvas */
+/* Grid for stacked previews */
 .showcase-grid {
   display: grid;
   gap: 22px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: start;
-  justify-items: center; /* centers each preview in its cell */
+  justify-items: center;
 }
 
-/* Tablet/mobile */
+/* === Responsive tweaks === */
 @media (max-width: 980px) {
-  .showcase-wrap { grid-template-columns: 1fr; }
-  .showcase-canvas { padding: 18px; }
+  .showcase-wrap {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 32px 16px 48px;
+  }
+
+  .showcase-canvas {
+    min-height: 560px;
+    padding: 20px;
+  }
 }
